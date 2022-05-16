@@ -12,5 +12,12 @@ services:
       - shopping_cart_webflux_data:/var/lib/mysql
     restart: always
 
+  sonarqube:
+    image: sonarqube:lts
+    ports:
+      - "9000:9000"
+    environment:
+      - SONAR_FORCEAUTHENTICATION=false
+
 volumes:
   shopping_cart_webflux_data:

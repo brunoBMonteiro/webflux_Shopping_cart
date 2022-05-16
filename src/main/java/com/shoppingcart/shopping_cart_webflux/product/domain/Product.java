@@ -19,10 +19,11 @@ public class Product {
     @NotNull(message = "O nome do produto não pode ser nulo")
     @NotEmpty(message = "O nome do produto não pode estar vazio!")
     private String name;
-    @NotEmpty(message = "O valor do produto não pode estar vazio!")
+    @NotNull(message = "O valor do produto não pode ser nulo")
     private double value;
-    @NotEmpty(message = "A quantidade do produto não pode estar vazio!")
     private int amount;
+    @NotEmpty(message = "Descreva o produto")
+    private String description;
 }
 
 

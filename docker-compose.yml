@@ -1,0 +1,16 @@
+version: '3.1'
+
+services:
+  db:
+    image: mysql
+    container_name: shopping_cart
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3306:3306"
+    volumes:
+      - shopping_cart_webflux_data:/var/lib/mysql
+    restart: always
+
+volumes:
+  shopping_cart_webflux_data:

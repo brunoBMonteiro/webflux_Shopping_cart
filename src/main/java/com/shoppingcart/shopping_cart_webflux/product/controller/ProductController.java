@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 import javax.validation.Valid;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 @Slf4j
@@ -32,19 +33,19 @@ public class ProductController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Mono<Product> createClient(@Valid @NotNull @RequestBody Product product){
+    public Mono<Product> createProduct(@Valid @NotNull @NotEmpty @RequestBody Product product){
         return productService.save(product);
     }
 
     @PutMapping(path = "/{id}")
     @ResponseStatus(HttpStatus.ACCEPTED)
-    public Mono<Void>  updateClient(@PathVariable Long id, @RequestBody Product product) {
+    public Mono<Void> updateProduct(@PathVariable Long id, @RequestBody Product product) {
         return productService.update(product.withId(id));
     }
 
     @DeleteMapping(path = "/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public Mono<Void> deleteClient(@PathVariable Long id){
+    public Mono<Void> deleteProduct(@PathVariable Long id){
         return productService.delete(id);
     }
 }

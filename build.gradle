@@ -16,6 +16,7 @@ configurations {
 
 repositories {
     mavenCentral()
+    maven { url 'https://repo.spring.io/milestone' }
 }
 
 dependencies {
@@ -27,6 +28,10 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'io.projectreactor:reactor-test'
+
+    implementation 'io.projectreactor:reactor-tools:3.4.17'
+
+    implementation 'dev.miku:r2dbc-mysql:0.8.2.RELEASE'
 
 
 }

@@ -39,7 +39,7 @@ public class ProductService {
 
 
         public <T> Mono<T> monoResponseStatusNotFoundException(){
-            return Mono.error(new ResponseStatusException(HttpStatus.NOT_FOUND, "Cliente não encontrado!"));
+            return Mono.error(new ResponseStatusException(HttpStatus.NOT_FOUND, "Produto não encontrado!"));
         }
 
 }

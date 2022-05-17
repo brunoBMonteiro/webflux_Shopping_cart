@@ -57,7 +57,6 @@ dependencies {
     implementation 'org.mock-server:mockserver-client-java:5.13.2'
     testImplementation 'org.mock-server:mockserver-junit-jupiter:5.11.2'
 
-
 }
 
 tasks.named('test') {

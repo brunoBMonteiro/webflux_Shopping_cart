@@ -29,7 +29,7 @@ public class ProductController {
     @Operation(summary = "Obter uma lista de produtos")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "encontrou lista", content = {
-                    @Content(mediaType = "application/json", schema = @Schema(implementation = Cliente.class))}),
+                    @Content(mediaType = "application/json", schema = @Schema(implementation = Product.class))}),
             @ApiResponse(responseCode = "204", description = "Tem uma lista mas está vazia", content = @Content),
             @ApiResponse(responseCode = "404", description = "lista de produtos não encontrada", content = @Content)
     })
@@ -42,7 +42,7 @@ public class ProductController {
     @Operation(summary = "Obter um produto por id")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "encontrou o produto", content = {
-                    @Content(mediaType = "application/json", schema = @Schema(implementation = Cliente.class))}),
+                    @Content(mediaType = "application/json", schema = @Schema(implementation = Product.class))}),
             @ApiResponse(responseCode = "404", description = "Produto não encontrado", content = @Content)
     })
     @GetMapping(path = "{id}")
@@ -54,7 +54,7 @@ public class ProductController {
     @Operation(summary = "Salva um novo produto")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "201", description = "salvou novo produto", content = {
-                    @Content(mediaType = "application/json", schema = @Schema(implementation = Cliente.class))}),
+                    @Content(mediaType = "application/json", schema = @Schema(implementation = Product.class))}),
             @ApiResponse(responseCode = "400", description = "Campo do produto em branco", content = @Content)
     })
     @PostMapping
@@ -66,7 +66,7 @@ public class ProductController {
     @Operation(summary = "Atualiza informações de um produto por id")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "202", description = "Informações do produto atualizadas", content = {
-                    @Content(mediaType = "application/json", schema = @Schema(implementation = Cliente.class))}),
+                    @Content(mediaType = "application/json", schema = @Schema(implementation = Product.class))}),
             @ApiResponse(responseCode = "404", description = "Produto não encontrado", content = @Content)
     })
     @PutMapping(path = "/{id}")
@@ -78,7 +78,7 @@ public class ProductController {
     @Operation(summary = "Deleta um produto por id")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "204", description = "produto deletado com sucesso", content = {
-                    @Content(mediaType = "application/json", schema = @Schema(implementation = Cliente.class))}),
+                    @Content(mediaType = "application/json", schema = @Schema(implementation = Product.class))}),
             @ApiResponse(responseCode = "404", description = "Produto não encontrado", content = @Content)
     })
     @DeleteMapping(path = "/{id}")
